@@ -15,10 +15,26 @@ namespace RazorPagesPizza.Pages
         {
             pizzas = PizzaService.GetAll();
         }
-        
+        /**-------This is how a beginner would write this------
         public string GlutenFreeText(Pizza pizza)
         {
-            return pizza.IsGlutenFree ? "Gluten Free": "Not Gluten Free";
+            if (pizza.IsGlutenFree)
+            {
+                return "Gluten Free";
+            }
+            else
+            {
+                return "Not Gluten Free";
+            }
+        }*/
+        public string GlutenFreeText(Pizza pizza)
+        {
+            return pizza.IsGlutenFree ? "Gluten Free" : "Not Gluten Free";
+        }
+
+        public string VegetarianText(Pizza pizza)
+        {
+            return pizza.IsVegetarian ? "Vegetarian" : "Carnivorous";
         }
 
         public IActionResult OnPost()
